@@ -2,14 +2,20 @@
 
 import { useState } from 'react';
 import { FiSearch, FiBell, FiDownload, FiGlobe, FiMenu, FiX } from 'react-icons/fi';
+import { useRouter } from 'next/navigation';
+
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const router =useRouter();
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
   };
-
+const loginClick=()=>{
+  router.push('/Login');
+  console.log("hi from next navigation")
+}
   return (
     <nav className="bg-black/80 text-white px-4 sm:px-6 py-3 flex justify-between items-center shadow-md relative z-10">
       {/* Left: Logo + Menu */}
@@ -32,7 +38,7 @@ const Navbar = () => {
       
       {/* Right: Actions */}
       <div className="flex items-center space-x-2 sm:space-x-4">
-        <button className="hidden sm:block text-sm text-white hover:text-cyan-400">
+        <button className="hidden sm:block text-sm text-white hover:text-cyan-400" onClick={loginClick}>
           Log in
         </button>
         <button className="hidden sm:block bg-white text-black rounded-md px-4 py-1 text-sm font-semibold hover:bg-gray-200">
@@ -77,7 +83,7 @@ const Navbar = () => {
               <FiGlobe className="w-5 h-5 hover:text-cyan-400 cursor-pointer" />
             </div>
             <div className="flex pt-3 space-x-3">
-              <button className="text-sm text-white hover:text-cyan-400">
+              <button className="text-sm text-white hover:text-cyan-400" onClick={loginClick}>
                 Log in
               </button>
               <button className="bg-white text-black rounded-md px-4 py-1 text-sm font-semibold hover:bg-gray-200">
