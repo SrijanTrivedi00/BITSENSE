@@ -43,13 +43,19 @@ export default function HomeContent() {
         <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-black/30 z-0"></div>
         <div className="container mx-auto px-6 text-center relative z-10">
           <div className="max-w-4xl mx-auto">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-blue-200">
-              Next-Gen Crypto Trading Platform
-            </h1>
-            <p className="text-xl md:text-2xl mb-8 text-blue-100">
-              Harness the power of quantum-inspired algorithms and AI-driven insights with bitsense
-            </p>
-            <div className="flex flex-col sm:flex-row justify-center gap-4">
+          <h1 className="
+            text-4xl md:text-6xl font-bold mb-6 
+            bg-clip-text text-transparent 
+            bg-gradient-to-r from-amber-400 via-yellow-500 to-orange-500
+            hover:bg-gradient-to-l hover:from-yellow-400 hover:to-amber-600
+            transition-all duration-500 
+            hover:-translate-y-1 hover:drop-shadow-[0_5px_15px_rgba(245,158,11,0.4)]
+            active:scale-95 cursor-pointer
+          ">
+            Next-Gen Crypto Trading Platform
+          </h1>
+            
+            <div className="flex flex-col sm:flex-row justify-center gap-4 mt-5">
               <button className="relative overflow-hidden group bg-blue-600 hover:bg-blue-700 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 transform hover:scale-105 z-10">
                 <span className="relative z-10">Start Trading</span>
                 <span className="absolute inset-0 bg-gradient-to-r from-blue-500 to-blue-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>

@@ -5,6 +5,7 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
 } from 'firebase/auth';
+import { useRouter } from 'next/navigation';
 
 export default function LoginPageWrapper() {
   const [email, setEmail] = useState('');
@@ -13,6 +14,7 @@ export default function LoginPageWrapper() {
   const [isLogin, setIsLogin] = useState(true);
   const [message, setMessage] = useState('');
   const [showpass,setShowpass]=useState("password");
+  const router=useRouter();
 
   const handleSubmit = async () => {
     if (!isLogin && password !== confirmPass) {
@@ -24,6 +26,8 @@ export default function LoginPageWrapper() {
       if (isLogin) {
         await signInWithEmailAndPassword(auth, email, password);
         setMessage("Logged in successfully!");
+        router.push('/');
+
       } else {
         await createUserWithEmailAndPassword(auth, email, password);
         setMessage("Account created successfully!");
@@ -32,9 +36,11 @@ export default function LoginPageWrapper() {
       setMessage(error.message);
     }
   };
+  
 const showpassword=()=>{
   setShowpass("text");
 }
+
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 via-gray-800 to-gray-700">
       <div className="bg-white rounded-2xl shadow-2xl p-8 w-full max-w-md transition-all">
@@ -59,16 +65,15 @@ const showpassword=()=>{
         />
 
         {!isLogin && (
-          <div className='flex '>
+          
           <input
-            type={showpass}
+            type="password"
             placeholder="Confirm Password"
             className="w-full p-3 rounded-xl border border-gray-300 mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500"
             value={confirmPass}
             onChange={(e) => setConfirmPass(e.target.value)}
           />
-          <button className="px-3 py-1 text-sm text-gray-700 border border-gray-300 rounded-md hover:bg-gray-100 transition duration-200" onClick={showpassword}>show password</button>
-          </div>
+          
         )}
 
         <button
