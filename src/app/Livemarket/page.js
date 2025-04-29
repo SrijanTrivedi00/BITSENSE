@@ -14,10 +14,14 @@ import {
 } from 'chart.js';
 import CryptoSentiments from "../utility/Sentiment.js"
 ChartJS.register(LineElement, PointElement, CategoryScale, LinearScale, Tooltip, Legend);
+import { useSearchParams } from 'next/navigation';
 
-const CryptoChartLive = ({ coinId , days=1  }) => {
+const CryptoChartLive = ({  days=1  }) => {
+  const searchParams = useSearchParams();
   const [chartData, setChartData] = useState([]);
   const [labels, setLabels] = useState([]);
+  const coinId = searchParams.get("coinId").toLowerCase() || "bitcoin";
+  console.log(coinId);
 
   useEffect(() => {
     const fetchChartData = async () => {
@@ -106,7 +110,7 @@ const CryptoChartLive = ({ coinId , days=1  }) => {
         </div>
       </div>
     </div>
-   <CryptoSentiments></CryptoSentiments>
+   <CryptoSentiments coinId={coinId}></CryptoSentiments>
     </div>
   );
 };

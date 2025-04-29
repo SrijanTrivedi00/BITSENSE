@@ -1,6 +1,6 @@
 'use client';
 import Cryptos from "./cryptos/page";
-import Footer from "@/footer/footercomponent";
+import Footer from "@/app/footer/footercomponent";
 import HomeContent from "./Home/homepage";
 
 const App=()=>{
