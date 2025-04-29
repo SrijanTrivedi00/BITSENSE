@@ -1,6 +1,5 @@
 'use client';
-
-import Cryptos from "./cryptos/cryptos";
+import Cryptos from "./cryptos/page";
 import Footer from "@/footer/footercomponent";
 import HomeContent from "./Home/homepage";
 

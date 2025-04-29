@@ -15,7 +15,7 @@ import {
 import CryptoSentiments from "../utility/Sentiment.js"
 ChartJS.register(LineElement, PointElement, CategoryScale, LinearScale, Tooltip, Legend);
 
-const CryptoChartLive = ({ coinId = 'bitcoin', days = 1 }) => {
+const CryptoChartLive = ({ coinId , days=1  }) => {
   const [chartData, setChartData] = useState([]);
   const [labels, setLabels] = useState([]);
 

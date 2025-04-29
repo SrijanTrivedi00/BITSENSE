@@ -16,6 +16,9 @@ const loginClick=()=>{
   router.push('/Login');
   console.log("hi from next navigation")
 }
+const handleMarketsClick=()=>{
+  router.push('/cryptos');
+}
   return (
     <nav className="
     bg-gray-900/95 backdrop-blur-lg
@@ -40,25 +43,105 @@ const loginClick=()=>{
       
       {/* Desktop Menu */}
       <ul className="hidden lg:flex space-x-1">
-        {['Buy crypto', 'Markets', 'Trade', 'Futures', 'Bots', 'Earn', 'Copy', 'Web3', 'Launchhub'].map((item) => (
-          <li key={item} className="relative group">
-            <a className="
-              px-3 py-2 text-sm font-medium
-              text-gray-300 hover:text-white
-              transition-all duration-200
-              group-hover:drop-shadow-[0_0_6px_rgba(34,211,238,0.6)]
-            ">
-              {item}
-              <span className="
-                absolute bottom-0 left-1/2 h-0.5 w-0
-                bg-gradient-to-r from-cyan-400 to-blue-500
-                transition-all duration-300
-                group-hover:w-[calc(100%-1.5rem)] group-hover:left-3
-              "/>
-            </a>
-          </li>
-        ))}
-      </ul>
+      {/* Buy Crypto */}
+      <li className="relative group">
+        <a
+          className="px-3 py-2 text-sm font-medium text-gray-300 hover:text-white transition-all duration-200 group-hover:drop-shadow-[0_0_6px_rgba(34,211,238,0.6)]"
+          
+        >
+          Buy crypto
+          <span className="absolute bottom-0 left-1/2 h-0.5 w-0 bg-gradient-to-r from-cyan-400 to-blue-500 transition-all duration-300 group-hover:w-[calc(100%-1.5rem)] group-hover:left-3" />
+        </a>
+      </li>
+
+      {/* Markets */}
+      <li className="relative group">
+        <a
+          className="px-3 cursor-pointer py-2 text-sm font-medium text-gray-300 hover:text-white transition-all duration-200 group-hover:drop-shadow-[0_0_6px_rgba(34,211,238,0.6)]"
+          onClick={handleMarketsClick}
+        >
+          Markets
+          <span className="absolute bottom-0 left-1/2 h-0.5 w-0 bg-gradient-to-r from-cyan-400 to-blue-500 transition-all duration-300 group-hover:w-[calc(100%-1.5rem)] group-hover:left-3" />
+        </a>
+      </li>
+
+      {/* Trade */}
+      <li className="relative group">
+        <a
+          className="px-3 py-2 text-sm font-medium text-gray-300 hover:text-white transition-all duration-200 group-hover:drop-shadow-[0_0_6px_rgba(34,211,238,0.6)]"
+          
+        >
+          Trade
+          <span className="absolute bottom-0 left-1/2 h-0.5 w-0 bg-gradient-to-r from-cyan-400 to-blue-500 transition-all duration-300 group-hover:w-[calc(100%-1.5rem)] group-hover:left-3" />
+        </a>
+      </li>
+
+      {/* Futures */}
+      <li className="relative group">
+        <a
+          className="px-3 py-2 text-sm font-medium text-gray-300 hover:text-white transition-all duration-200 group-hover:drop-shadow-[0_0_6px_rgba(34,211,238,0.6)]"
+          
+        >
+          Futures
+          <span className="absolute bottom-0 left-1/2 h-0.5 w-0 bg-gradient-to-r from-cyan-400 to-blue-500 transition-all duration-300 group-hover:w-[calc(100%-1.5rem)] group-hover:left-3" />
+        </a>
+      </li>
+
+      {/* Bots */}
+      <li className="relative group">
+        <a
+          className="px-3 py-2 text-sm font-medium text-gray-300 hover:text-white transition-all duration-200 group-hover:drop-shadow-[0_0_6px_rgba(34,211,238,0.6)]"
+          
+        >
+          Bots
+          <span className="absolute bottom-0 left-1/2 h-0.5 w-0 bg-gradient-to-r from-cyan-400 to-blue-500 transition-all duration-300 group-hover:w-[calc(100%-1.5rem)] group-hover:left-3" />
+        </a>
+      </li>
+
+      {/* Earn */}
+      <li className="relative group">
+        <a
+          className="px-3 py-2 text-sm font-medium text-gray-300 hover:text-white transition-all duration-200 group-hover:drop-shadow-[0_0_6px_rgba(34,211,238,0.6)]"
+          
+        >
+          Earn
+          <span className="absolute bottom-0 left-1/2 h-0.5 w-0 bg-gradient-to-r from-cyan-400 to-blue-500 transition-all duration-300 group-hover:w-[calc(100%-1.5rem)] group-hover:left-3" />
+        </a>
+      </li>
+
+      {/* Copy */}
+      <li className="relative group">
+        <a
+          className="px-3 py-2 text-sm font-medium text-gray-300 hover:text-white transition-all duration-200 group-hover:drop-shadow-[0_0_6px_rgba(34,211,238,0.6)]"
+          
+        >
+          Copy
+          <span className="absolute bottom-0 left-1/2 h-0.5 w-0 bg-gradient-to-r from-cyan-400 to-blue-500 transition-all duration-300 group-hover:w-[calc(100%-1.5rem)] group-hover:left-3" />
+        </a>
+      </li>
+
+      {/* Web3 */}
+      <li className="relative group">
+        <a
+          className="px-3 py-2 text-sm font-medium text-gray-300 hover:text-white transition-all duration-200 group-hover:drop-shadow-[0_0_6px_rgba(34,211,238,0.6)]"
+          
+        >
+          Web3
+          <span className="absolute bottom-0 left-1/2 h-0.5 w-0 bg-gradient-to-r from-cyan-400 to-blue-500 transition-all duration-300 group-hover:w-[calc(100%-1.5rem)] group-hover:left-3" />
+        </a>
+      </li>
+
+      {/* Launchhub */}
+      <li className="relative group">
+        <a
+          className="px-3 py-2 text-sm font-medium text-gray-300 hover:text-white transition-all duration-200 group-hover:drop-shadow-[0_0_6px_rgba(34,211,238,0.6)]"
+          
+        >
+          Launchhub
+          <span className="absolute bottom-0 left-1/2 h-0.5 w-0 bg-gradient-to-r from-cyan-400 to-blue-500 transition-all duration-300 group-hover:w-[calc(100%-1.5rem)] group-hover:left-3" />
+        </a>
+      </li>
+    </ul>
     </div>
     
     {/* Right: Actions */}
