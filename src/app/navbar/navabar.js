@@ -19,6 +19,9 @@ const loginClick=()=>{
 const handleMarketsClick=()=>{
   router.push('/cryptos');
 }
+const protfoliotracker=()=>{
+  router.push('/Portfolio')
+}
   return (
     <nav className="
     bg-gray-900/95 backdrop-blur-lg
@@ -138,6 +141,15 @@ const handleMarketsClick=()=>{
           
         >
           Launchhub
+          <span className="absolute bottom-0 left-1/2 h-0.5 w-0 bg-gradient-to-r from-cyan-400 to-blue-500 transition-all duration-300 group-hover:w-[calc(100%-1.5rem)] group-hover:left-3" />
+        </a>
+      </li>
+      <li className="relative group">
+        <a
+          className="px-3 py-2 text-sm font-medium text-gray-300 hover:text-white transition-all duration-200 group-hover:drop-shadow-[0_0_6px_rgba(34,211,238,0.6)]"
+          onClick={protfoliotracker}
+        >
+          Portfolio Tracker
           <span className="absolute bottom-0 left-1/2 h-0.5 w-0 bg-gradient-to-r from-cyan-400 to-blue-500 transition-all duration-300 group-hover:w-[calc(100%-1.5rem)] group-hover:left-3" />
         </a>
       </li>
