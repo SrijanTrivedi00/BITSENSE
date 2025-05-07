@@ -38,36 +38,123 @@ export default function HomeContent() {
   return (
     <main className="flex-1 relative z-10 overflow-hidden">
       {/* Hero Section with animated gradient */}
-      <section className="relative bg-gradient-to-br from-gray-900 via-primary to-primary-dark text-white py-24 md:py-32">
-        <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-20 z-0"></div>
-        <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-black/30 z-0"></div>
-        <div className="container mx-auto px-6 text-center relative z-10">
-          <div className="max-w-4xl mx-auto">
-          <h1 className="
-            text-4xl md:text-6xl font-bold mb-6 
-            bg-clip-text text-transparent 
-            bg-gradient-to-r from-amber-400 via-yellow-500 to-orange-500
-            hover:bg-gradient-to-l hover:from-yellow-400 hover:to-amber-600
-            transition-all duration-500 
-            hover:-translate-y-1 hover:drop-shadow-[0_5px_15px_rgba(245,158,11,0.4)]
-            active:scale-95 cursor-pointer
-          ">
-            Next-Gen Crypto Trading Platform
-          </h1>
-            
-            <div className="flex flex-col sm:flex-row justify-center gap-4 mt-5">
-              <button className="relative overflow-hidden group bg-blue-600 hover:bg-blue-700 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 transform hover:scale-105 z-10">
-                <span className="relative z-10">Start Trading</span>
-                <span className="absolute inset-0 bg-gradient-to-r from-blue-500 to-blue-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
-              </button>
-              <button className="relative overflow-hidden group bg-transparent border-2 border-blue-400 hover:bg-blue-900/30 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 transform hover:scale-105 z-10">
-                <span className="relative z-10 text-white">Explore Features</span>
-                <span className="absolute inset-0 bg-blue-900/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
-              </button>
-            </div>
-          </div>
+      <section className="relative min-h-[80vh] bg-gray-950 text-white overflow-hidden">
+  {/* Improved background gradient */}
+  <div className="absolute inset-0 z-0 bg-gradient-to-br from-gray-900 via-gray-900 to-primary-dark/80">
+    {/* Subtle grid texture */}
+    <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-[0.03]"></div>
+    
+    {/* Animated radial gradient */}
+    <div className="absolute inset-0 opacity-30">
+      <div className="absolute -top-20 -left-20 w-[600px] h-[600px] rounded-full bg-blue-600/20 blur-[100px] animate-float-slow"></div>
+      <div className="absolute -bottom-20 -right-20 w-[500px] h-[500px] rounded-full bg-purple-600/20 blur-[100px] animate-float-slow animation-delay-3000"></div>
+    </div>
+  </div>
+
+  {/* Floating crypto coins animation - now with proper React rendering */}
+  <div className="absolute inset-0 z-0 overflow-hidden">
+    {Array.from({ length: 15 }).map((_, i) => {
+      const coins = ['₿', 'Ξ', '◎', '�'];
+      const coin = coins[i % coins.length];
+      const animationDuration = `${Math.random() * 15 + 10}s`;
+      const animationDelay = `${Math.random() * 5}s`;
+      
+      return (
+        <div 
+          key={i}
+          className="absolute text-yellow-400/30 font-bold animate-float"
+          style={{
+            fontSize: `${Math.random() * 24 + 16}px`,
+            top: `${Math.random() * 100}%`,
+            left: `${Math.random() * 100}%`,
+            animationDuration: animationDuration,
+            animationDelay: animationDelay
+          }}
+        >
+          {coin}
         </div>
-      </section>
+      );
+    })}
+  </div>
+  
+  {/* Content */}
+  <div className="container mx-auto px-6 h-full flex items-center justify-center text-center relative z-10">
+    <div className="max-w-5xl mx-auto py-24">
+      <h1 className="
+        text-5xl md:text-7xl lg:text-8xl font-extrabold mb-8 leading-tight
+        bg-clip-text text-transparent 
+        bg-gradient-to-r from-amber-400 via-yellow-500 to-orange-500
+        relative
+        hover:bg-gradient-to-r hover:from-yellow-400 hover:via-amber-500 hover:to-orange-600
+        transition-all duration-500 
+        hover:-translate-y-1 hover:drop-shadow-[0_5px_30px_rgba(245,158,11,0.6)]
+        active:scale-95 cursor-pointer
+      ">
+        Next-Gen Crypto Trading
+      </h1>
+      
+      <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-12">
+        Institutional-grade trading platform with <span className="text-amber-400 font-semibold">AI-powered</span> analytics and <span className="text-blue-400 font-semibold">lightning-fast</span> execution
+      </p>
+      
+      <div className="flex flex-col sm:flex-row justify-center gap-6 mt-8">
+        <button className="
+          relative overflow-hidden group 
+          bg-gradient-to-br from-blue-600 to-blue-500 
+          hover:from-blue-500 hover:to-blue-400 
+          px-10 py-5 rounded-xl text-lg font-bold 
+          transition-all duration-300 
+          transform hover:scale-105 hover:shadow-[0_10px_30px_-5px_rgba(59,130,246,0.5)]
+          active:scale-95 z-10
+          border border-blue-400/30
+          shadow-lg
+        ">
+          <span className="relative z-10 flex items-center justify-center gap-2">
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+            </svg>
+            Start Trading
+          </span>
+          <span className="absolute inset-0 bg-gradient-to-r from-blue-400 to-blue-300 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
+        </button>
+        
+        <button className="
+          relative overflow-hidden group 
+          bg-gray-900/60 border border-gray-700 
+          hover:bg-gray-800/60 hover:border-gray-600 
+          px-10 py-5 rounded-xl text-lg font-bold 
+          transition-all duration-300 
+          transform hover:scale-105 hover:shadow-[0_10px_30px_-5px_rgba(255,255,255,0.1)]
+          active:scale-95 z-10
+          shadow-lg
+        ">
+          <span className="relative z-10 flex items-center justify-center gap-2 text-white">
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"></path>
+            </svg>
+            Explore Features
+          </span>
+        </button>
+      </div>
+      
+      <div className="mt-16 flex flex-wrap justify-center gap-4 opacity-90">
+        {[
+          { symbol: 'BTC', change: 2.85 },
+          { symbol: 'ETH', change: 1.92 },
+          { symbol: 'SOL', change: 5.42 },
+          { symbol: 'XRP', change: 0.78 }
+        ].map((coin) => (
+          <div key={coin.symbol} className="px-4 py-2 bg-gray-900/50 rounded-lg border border-gray-800 flex items-center gap-2">
+            <span className="font-bold text-amber-400">{coin.symbol}</span>
+            <span className={`text-sm font-mono ${coin.change > 0 ? 'text-green-400' : 'text-red-400'}`}>
+              {coin.change > 0 ? '↑' : '↓'} {Math.abs(coin.change)}%
+            </span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* Market Overview with glassmorphism effect */}
       <section className="py-16 bg-gradient-to-b from-gray-900 to-gray-950 relative">

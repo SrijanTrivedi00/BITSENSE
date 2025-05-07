@@ -70,11 +70,12 @@ const CryptoPortfolioTracker = () => {
     }
   };
 
-  const handleInputChange = (e) => {
+  const handleInputChange = (e) => {console.log(e.target);
     const { name, value } = e.target;
+    console.log(name,",",value)
     setNewCoin(prev => ({
       ...prev,
-      [name]: name === 'symbol' ? value.toUpperCase() : value
+      [name]: name === 'symbol' ? value.toLowerCase() : value
     }));
   };
 
