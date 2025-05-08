@@ -60,19 +60,19 @@ export default function HomeContent() {
       const animationDelay = `${Math.random() * 5}s`;
       
       return (
-        <div 
-          key={i}
-          className="absolute text-yellow-400/30 font-bold animate-float"
-          style={{
-            fontSize: `${Math.random() * 24 + 16}px`,
-            top: `${Math.random() * 100}%`,
-            left: `${Math.random() * 100}%`,
-            animationDuration: animationDuration,
-            animationDelay: animationDelay
-          }}
-        >
-          {coin}
-        </div>
+        <div
+        key={i}
+        className="absolute text-yellow-400/30 font-bold animate-float"
+        style={{
+          fontSize: "20px",        
+          top: `${(i * 10) % 100}%`, 
+          left: `${(i * 20) % 100}%`,
+          animationDuration: "3s",  
+          animationDelay: `${i * 0.2}s`,
+        }}
+      >
+        {coin}
+      </div>
       );
     })}
   </div>
