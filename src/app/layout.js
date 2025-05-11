@@ -3,6 +3,8 @@ import "./globals.css";
 import Navbar from "./navbar/navabar";
 import FallingBitcoinBackground from "./utility/Backgorundcover";
 import Footer from "@/app/footer/footercomponent";
+import { ClipLoader} from "react-spinners";
+import { Suspense } from "react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,10 +27,14 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        
+        <Suspense fallback={<div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
+      <ClipLoader color="#36d7b7" loading={"loading"} size={50} />
+    </div>}>
         <Navbar></Navbar>
         {children}
         <Footer></Footer>
+        </Suspense>
+      
       </body>
     </html>
   );
