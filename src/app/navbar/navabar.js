@@ -2,7 +2,8 @@
 
 import { useState } from 'react';
 import { FiSearch, FiBell, FiDownload, FiGlobe, FiMenu, FiX,FiLogIn, FiChevronRight  } from 'react-icons/fi';
-import { useRouter } from 'next/navigation';
+import { useRouter } from 'next/navigation';import { FiHome } from "react-icons/fi";
+
 
 
 const Navbar = () => {
@@ -21,6 +22,9 @@ const handleMarketsClick=()=>{
 }
 const protfoliotracker=()=>{
   router.push('/Portfolio')
+}
+const Gotohome=()=>{
+  router.push('/')
 }
   return (
     <nav className="
@@ -146,15 +150,47 @@ const protfoliotracker=()=>{
       </li>
       <li className="relative group">
         <a
-          className="px-3 py-2 text-sm font-medium text-gray-300 hover:text-white transition-all duration-200 group-hover:drop-shadow-[0_0_6px_rgba(34,211,238,0.6)]"
+          className="px-3 py-2 text-sm cursor-pointer font-medium text-gray-300 hover:text-white transition-all duration-200 group-hover:drop-shadow-[0_0_6px_rgba(34,211,238,0.6)]"
           onClick={protfoliotracker}
         >
           Portfolio Tracker
           <span className="absolute bottom-0 left-1/2 h-0.5 w-0 bg-gradient-to-r from-cyan-400 to-blue-500 transition-all duration-300 group-hover:w-[calc(100%-1.5rem)] group-hover:left-3" />
         </a>
       </li>
+      
     </ul>
     </div>
+    
+
+<div className="ml-50">
+  <button
+    className="
+      p-2 rounded-full
+      bg-gray-800/50 hover:bg-gray-700/70
+      transition-all duration-200
+      group
+    "
+    aria-label="Go to Home"
+    onClick={Gotohome}
+  >
+    <FiHome
+      className="
+        w-5 h-5 text-gray-400
+        group-hover:text-cyan-400
+        group-hover:scale-110
+        transition-transform duration-200
+      "
+    />
+    <span
+      className="
+        absolute top-0 right-0
+        w-2 h-2 bg-green-500 rounded-full
+        ring-2 ring-gray-900
+      "
+    />
+  </button>
+</div>
+
     
     {/* Right: Actions */}
     <div className="flex items-center space-x-3 sm:space-x-4">
